@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interacción con el contrato inteligente</title>
+</head>
+<body>
+  <h1>Interacción con el contrato inteligente</h1>
+
+  <h2>Crear envío</h2>
+  <input type="text" id="origin" placeholder="Origen">
+  <input type="text" id="destination" placeholder="Destino">
+  <input type="text" id="carrier" placeholder="Transportista">
+  <button id="createShipmentButton">Crear envío</button>
+
+  <h2>Actualizar envío</h2>
+  <input type="number" id="updateShipmentId" placeholder="ID del envío">
+  <input type="text" id="updateOrigin" placeholder="Nuevo origen">
+  <input type="text" id="updateDestination" placeholder="Nuevo destino">
+  <input type="text" id="updateCarrier" placeholder="Nuevo transportista">
+  <button id="updateShipmentButton">Actualizar envío</button>
+
+  <h2>Obtener envío</h2>
+  <input type="number" id="getShipmentId" placeholder="ID del envío">
+  <button id="getShipmentButton">Obtener envío</button>
+  <pre id="shipmentData"></pre>
+
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+  <script type="module" src="/TruckTracking.5af5efab.js">
+    const { createShipment, updateShipment, getShipmentData, initContract } = window.TruckTracking;
+    window.onload = () => {
+      initContract();
+
+      document.getElementById("createShipmentButton").addEventListener("click", async () => {
+        const origin = document.getElementById("origin").value;
+        const destination = document.getElementById("destination").value;
+        const carrier = document.getElementById("carrier").value;
+        await createShipment(origin, destination, carrier);
+      });
+
+      document.getElementById("updateShipmentButton").addEventListener("click", async () => {
+        const shipmentId = document.getElementById("updateShipmentId").value;
+        const origin = document.getElementById("updateOrigin").value;
+        const destination = document.getElementById("updateDestination").value;
+        const carrier = document.getElementById("updateCarrier").value;
+        await updateShipment(shipmentId, origin, destination, carrier);
+      });
+
+      document.getElementById("getShipmentButton").addEventListener("click", async () => {
+        const shipmentId = document.getElementById("getShipmentId").value;
+        const shipmentData = await getShipmentData(shipmentId);
+        document.getElementById("shipmentData").innerText = JSON.stringify(shipmentData, null, 2);
+      });
+    }
+  </script>
+</body>
+</html>
