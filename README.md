@@ -1,8 +1,6 @@
 # truck-tracking-web3-prototype
 
-# TruckTracking
-
-TruckTracking is a decentralized application (DApp) built on the Ethereum blockchain that enables real-time tracking of trucks and their movements using Web3 technologies.
+TruckTracking is a decentralized application prototype (DApp) built on the Ethereum blockchain that enables real-time tracking of trucks and their movements using Web3 technologies.
 
 ## Features
 
