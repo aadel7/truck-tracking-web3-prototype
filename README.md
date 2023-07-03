@@ -12,11 +12,13 @@ TruckTracking is a decentralized application prototype (DApp) built on the Ether
 
 To run the TruckTracking application locally, you need to have the following packages/libraries installed:
 
-- ### npm (Node Package Manager)
-- ### Node.js
-- ### Express.js
-- ### Ganache CLI (a command-line version of Ganache)
-- ### Puppeteer
+- npm (Node Package Manager)
+- Node.js
+- Express.js
+- Ganache CLI (a command-line version of Ganache)
+- Puppeteer
+- Mocha
+- Chai
 
 ## Installation
 
