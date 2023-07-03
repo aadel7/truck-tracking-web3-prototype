@@ -25,15 +25,15 @@ To run the TruckTracking application locally, you need to have the following pac
 
 1. Clone the repository:
 
-	git clone https://github.com/aadel7/truck-tracking-web3-prototype/
+	- git clone https://github.com/aadel7/truck-tracking-web3-prototype/
 
 2. Navigate to the project directory:
 
-	cd truck-tracking-web3-prototype
+	- cd truck-tracking-web3-prototype
 
 4. Start Ganache CLI:
 
-	npx ganache-cli
+	- npx ganache-cli
 
 5. Deploy the smart contract:
 
@@ -51,7 +51,7 @@ To run the TruckTracking application locally, you need to have the following pac
 
 7. Start the application server:
 
-	node app.js
+	- node app.js
 
 8. Open your web browser and visit `http://localhost:3000` to access the TruckTracking application.
 
@@ -74,7 +74,7 @@ To run the tests for the TruckTracking application, using Puppeteer and Chai, fo
 
 3. Run the following command:
 
-	npx mocha test.js --timeout 60000
+	- npx mocha test.js --timeout 60000
 
 ## Contributing
 
