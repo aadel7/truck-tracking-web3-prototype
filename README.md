@@ -56,7 +56,7 @@ To run the TruckTracking application locally, you need to have the following pac
 
 ## Testing
 
-To run the tests for the TruckTracking application, using Puppeteer and Chai, follow these steps:
+To run the tests for the TruckTracking application, using Mocha, Chai, and Puppeteer, follow these steps:
 
 - Make sure the application server is running.
 - Open a terminal and navigate to the project/test directory.
