@@ -14,9 +14,12 @@ TruckTracking is a decentralized application (DApp) built on the Ethereum blockc
 
 To run the TruckTracking application locally, you need to have the following packages/libraries installed:
 
-- Node.js
 - npm (Node Package Manager)
+- Node.js
+- Express.js
 - Ganache CLI (a command-line version of Ganache)
+- Puppeteer
+
 
 ## Installation
 
@@ -60,6 +63,18 @@ To run the TruckTracking application locally, you need to have the following pac
 	1. You can now track trucks by entering the truck details and submitting the form.
 	
 	2. Truck movements and location updates will be stored on the Ethereum blockchain and can be viewed in real-time on the TruckTracking interface.
+
+## Testing
+
+To run the tests for the TruckTracking application, using Puppeteer and Chai, follow these steps:
+
+1. Make sure the application server is running.
+
+2. Open a terminal and navigate to the project/test directory.
+
+3. Run the following command:
+
+	npx mocha test.js --timeout 60000
 
 ## Contributing
 
