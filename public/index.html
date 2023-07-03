@@ -47,6 +47,8 @@
         </div>
       </div>
     </div>
+    <div id="resultContainer"></div>
+
   </div>
 
   <div id="truckTrackingPage" class="hidden">
@@ -76,7 +78,7 @@
           <option value="Boston">Boston</option>
           <option value="Ciudad de México">Ciudad de México</option>
           <option value="Buenos Aires">Buenos Aires</option>
-      </select>
+        </select>
 
         <!-- <input type="text" id="destination" placeholder="Destino"> -->
 
@@ -89,8 +91,8 @@
           <option value="Boston">Boston</option>
           <option value="Ciudad de México">Ciudad de México</option>
           <option value="Buenos Aires">Buenos Aires</option>
-      </select>
-        
+        </select>
+
         <select title="CarrierList" id="carrier" class="form-control input-style" placeholder="Transportista">
           <option value="" disabled selected hidden>Transportista</option>
           <option value="FedEx">FedEx</option>
@@ -99,11 +101,12 @@
           <option value="Nacex">Nacex</option>
           <option value="Seur">Seur</option>
           <option value="Amazon">Amazon</option>
-      </select>
+        </select>
 
         <input type="text" id="materialId" placeholder="ID de Material">
 
-        <select title="MaterialOriginList" id="materialOrigin" class="form-control input-style" placeholder="Origen de Material">
+        <select title="MaterialOriginList" id="materialOrigin" class="form-control input-style"
+          placeholder="Origen de Material">
           <option value="" disabled selected hidden>Origen de Material</option>
           <option value="Madrid">Madrid</option>
           <option value="Barcelona">Barcelona</option>
@@ -112,23 +115,23 @@
           <option value="Boston">Boston</option>
           <option value="Ciudad de México">Ciudad de México</option>
           <option value="Buenos Aires">Buenos Aires</option>
-      </select>
+        </select>
 
         <input type="date" id="materialHarvestDate" placeholder="Fecha de Cosecha">
         <input type="date" id="materialPackagingDate" placeholder="Fecha de Envasado">
         <input type="date" id="materialExpirationDate" placeholder="Fecha de Caducidad">
 
         <select title="CrearStatus" id="status" class="form-control input-style" placeholder="Estado">
-            <option value="" disabled selected hidden>Estado</option>
-            <option value="Creado">Creado</option>
-            <option value="Enviado">Enviado</option>
-            <option value="En Tránsito">En Tránsito</option>
-            <option value="Completado">Completado</option>
+          <option value="" disabled selected hidden>Estado</option>
+          <option value="Creado">Creado</option>
+          <option value="Enviado">Enviado</option>
+          <option value="En Tránsito">En Tránsito</option>
+          <option value="Completado">Completado</option>
         </select>
         <button id="createShipmentButton">Crear envío</button>
-    </div>
-    
-    <div class="card" id="updateCard">
+      </div>
+
+      <div class="card" id="updateCard">
         <h2>Actualizar envío</h2>
 
         <input type="number" id="updateShipmentId" placeholder="ID del envío">
@@ -144,7 +147,8 @@
           <option value="Buenos Aires">Buenos Aires</option>
         </select>
 
-        <select title="updateDestinationList" id="updateDestination" class="form-control input-style" placeholder="Nuevo destino">
+        <select title="updateDestinationList" id="updateDestination" class="form-control input-style"
+          placeholder="Nuevo destino">
           <option value="" disabled selected hidden>Nuevo destino</option>
           <option value="Madrid">Madrid</option>
           <option value="Barcelona">Barcelona</option>
@@ -155,7 +159,8 @@
           <option value="Buenos Aires">Buenos Aires</option>
         </select>
 
-        <select title="updateCarrierList" id="updateCarrier" class="form-control input-style" placeholder="Nuevo transportista">
+        <select title="updateCarrierList" id="updateCarrier" class="form-control input-style"
+          placeholder="Nuevo transportista">
           <option value="" disabled selected hidden>Nuevo transportista</option>
           <option value="FedEx">FedEx</option>
           <option value="DHL">DHL</option>
@@ -167,7 +172,8 @@
 
         <input type="text" id="updateMaterialId" placeholder="ID de Material">
 
-        <select title="updateMaterialOriginList" id="updateMaterialOrigin" class="form-control input-style" placeholder="Nuevo origen de Material">
+        <select title="updateMaterialOriginList" id="updateMaterialOrigin" class="form-control input-style"
+          placeholder="Nuevo origen de Material">
           <option value="" disabled selected hidden>Nuevo origen de Material</option>
           <option value="Madrid">Madrid</option>
           <option value="Barcelona">Barcelona</option>
@@ -183,14 +189,14 @@
         <input type="date" id="updateMaterialExpirationDate" placeholder="Nueva fecha de Caducidad">
 
         <select title="ActualizarStatus" id="updateStatus" class="form-control input-style" placeholder="Nuevo estado">
-            <option value="" disabled selected hidden>Nuevo estado</option>
-            <option value="Creado">Creado</option>
-            <option value="Enviado">Enviado</option>
-            <option value="En Tránsito">En Tránsito</option>
-            <option value="Completado">Completado</option>
+          <option value="" disabled selected hidden>Nuevo estado</option>
+          <option value="Creado">Creado</option>
+          <option value="Enviado">Enviado</option>
+          <option value="En Tránsito">En Tránsito</option>
+          <option value="Completado">Completado</option>
         </select>
         <button id="updateShipmentButton">Actualizar envío</button>
-    </div>
+      </div>
 
       <div class="card" id="getCard">
         <h2>Obtener envío</h2>
@@ -221,7 +227,7 @@
             </i>
           </div>
         </div>
-        
+
 
         <div class="shipment-info">
           <div class="info-row">
@@ -249,43 +255,44 @@
             <span class="info-value" id="statusInfo"></span>
           </div>
           <div class="info-row">
-          <span class="info-title">ID de Material:</span>
-          <span class="info-value" id="materialIdInfo"></span>
-        </div>
+            <span class="info-title">ID de Material:</span>
+            <span class="info-value" id="materialIdInfo"></span>
+          </div>
 
 
-        <div class="info-row">
-          <span class="info-title">Origen de Material:</span>
-          <span class="info-value" id="materialOriginInfo"></span>
-        </div>
-        <div class="info-row">
-          <span class="info-title">Fecha de Cosecha:</span>
-          <span class="info-value" id="materialHarvestDateInfo"></span>
-        </div>
-        <div class="info-row">
-          <span class="info-title">Fecha de Envasado:</span>
-          <span class="info-value" id="materialPackagingDateInfo"></span>
-        </div>
-        <div class="info-row">
-          <span class="info-title">Fecha de Caducidad:</span>
-          <span class="info-value" id="materialExpirationDateInfo"></span>
-        </div>
-        <div><button id="updateCurrentShipmentButton">Actualizar Este Envío</button></div>
+          <div class="info-row">
+            <span class="info-title">Origen de Material:</span>
+            <span class="info-value" id="materialOriginInfo"></span>
+          </div>
+          <div class="info-row">
+            <span class="info-title">Fecha de Cosecha:</span>
+            <span class="info-value" id="materialHarvestDateInfo"></span>
+          </div>
+          <div class="info-row">
+            <span class="info-title">Fecha de Envasado:</span>
+            <span class="info-value" id="materialPackagingDateInfo"></span>
+          </div>
+          <div class="info-row">
+            <span class="info-title">Fecha de Caducidad:</span>
+            <span class="info-value" id="materialExpirationDateInfo"></span>
+          </div>
+          <div><button id="updateCurrentShipmentButton">Actualizar Este Envío</button></div>
 
+        </div>
+      </div>
+
+      <div class="card" id="allShipmentsCard">
+        <h2>Datos de los envíos</h2>
+        <ul id="shipmentList"></ul>
       </div>
     </div>
-
-    <div class="card" id="allShipmentsCard">
-      <h2>Datos de los envíos</h2>
-      <ul id="shipmentList"></ul>
-    </div>
-  </div>
   </div>
 
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
-  <script src="TruckTracking.js"></script>
+  <script type="module" src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+  <script type="module" src="TruckTracking.js"></script>
 </body>
 </div>
+
 </html>
 </div>

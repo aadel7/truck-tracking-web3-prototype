@@ -1,11 +1,8 @@
-const web3 = new Web3('http://127.0.0.1:8545');
+// const Web3 = require('web3');
+const web3 = new Web3('ws://127.0.0.1:8545');
 
 // Se obtiene al realizar el deployment del Smart Contract en Remix IDE.
-const contractAddress = '0x6DD90D423E60C82B89090379d06D7871de6DFd86';
-
-// Se obtienen de Ganache
-const privateKey = '0x72aa9293caf3505651584a4fd2b244a19ce0146a7a05926e1d4ebdbf6aadf76c';
-const fromAddress = '0x62f3A2D540374B98345354B6163f765892B8F2a9';
+const contractAddress = '0x0a30ceE042b4B919fF37C546fE5C3AD3Afd6b944';
 
 // Se obtiene al compilar el Smart Contract en Remix IDE
 const contractABI = [
@@ -570,27 +567,37 @@ async function initContract() {
 // Function to register the event listeners
 async function registerEventListeners() {
     // Event listener for ShipmentCreated event
-    contractInstance.events.ShipmentCreated({}, (error, event) => {
-      if (error) {
-        console.error("Error processing ShipmentCreated event:", error);
-      } else {
-        const shipmentId = event.returnValues.shipmentId;
-        console.log("Shipment created with ID:", shipmentId);
-        // Display or handle the shipment creation message as desired
-      }
+    const shipmentCreatedEventListener = contractInstance.events.ShipmentCreated({}, (error, event) => {
+        if (error) {
+            console.error("Error processing ShipmentCreated event:", error);
+            saveResultToDOM("Error");
+        } else {
+            const shipmentId = event.returnValues.shipmentId;
+            console.log("Shipment created with ID:", shipmentId);
+            
+        }
     });
-  
+
     // Event listener for ShipmentUpdated event
-    contractInstance.events.ShipmentUpdated({}, (error, event) => {
-      if (error) {
-        console.error("Error processing ShipmentUpdated event:", error);
-      } else {
-        const shipmentId = event.returnValues.shipmentId;
-        console.log("Shipment updated with ID:", shipmentId);
-        // Display or handle the shipment update message as desired
-      }
+    const shipmentUpdatedEventListener = contractInstance.events.ShipmentUpdated({}, (error, event) => {
+        if (error) {
+            console.error("Error processing ShipmentUpdated event:", error);
+            saveResultToDOM("Error");
+        } else {
+            const shipmentId = event.returnValues.shipmentId;
+            console.log("Shipment updated with ID:", shipmentId);
+        }
     });
-  }
+}
+
+// Function to save the result in the DOM
+function saveResultToDOM(result) {
+    const resultElement = document.createElement("p");
+    resultElement.textContent = result;
+    document.getElementById("resultContainer").appendChild(resultElement);
+}
+
+
 
 async function getShipmentData(shipmentId) {
     try {
@@ -619,19 +626,19 @@ async function getShipmentData(shipmentId) {
         console.log(document.getElementById("materialIdInfo").innerText);
 
         // Supongamos que el timestamp es 1617687460000 (15 de abril de 2021 10:31:00 UTC)
-        const timestamp = shipmentData.timestamp;
-        const timestampInMilliseconds = timestamp * 1000;
-        const date = new Date(timestampInMilliseconds);
-        const day = ("0" + date.getDate()).slice(-2);
-        const month = ("0" + (date.getMonth() + 1)).slice(-2);
-        const year = date.getFullYear();
-        const hours = ("0" + date.getHours()).slice(-2);
-        const minutes = ("0" + date.getMinutes()).slice(-2);
-        const seconds = ("0" + date.getSeconds()).slice(-2);
-        const dateString = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
-        console.log(dateString);
+        // const timestamp = shipmentData.timestamp;
+        // const timestampInMilliseconds = timestamp * 1000;
+        // const date = new Date(timestampInMilliseconds);
+        // const day = ("0" + date.getDate()).slice(-2);
+        // const month = ("0" + (date.getMonth() + 1)).slice(-2);
+        // const year = date.getFullYear();
+        // const hours = ("0" + date.getHours()).slice(-2);
+        // const minutes = ("0" + date.getMinutes()).slice(-2);
+        // const seconds = ("0" + date.getSeconds()).slice(-2);
+        // const dateString = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+        // console.log(dateString);
 
-        document.getElementById("timestamp").innerText = dateString;
+        // document.getElementById("timestamp").innerText = dateString;
 
         // Muestra la cuenta seleccionada en la card de datos del envío
         document.getElementById("accountInfo").innerText = selectedAccount;
