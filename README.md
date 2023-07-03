@@ -56,7 +56,7 @@ To run the TruckTracking application locally, you need to have the following pac
 ## Usage
 
 - You can now track trucks by entering the truck details and submitting the form.
-- Truck movements and location updates will be stored on the Ethereum blockchain and can be viewed in real-time on the TruckTracking interface.
+- Truck movements and location updates will be stored on the Ethereum blockchain.
 
 ## Testing
 
