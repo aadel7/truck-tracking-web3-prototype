@@ -46,8 +46,8 @@ To run the TruckTracking application locally, you need to have the following pac
 	- Option 2: Using Truffle
 
 6. Update the Contract Address in `TruckTracking.js`:
-- Open the `TruckTracking.js` file located in the project directory.
-- Update the `ContractAddress` constant with the deployed contract's address on Ganache (e.g., `0x18CE406CDe1dc7B324AD01Df19D0f37749dA5c85`).
+	- Open the `TruckTracking.js` file located in the project directory.
+	- Update the `ContractAddress` constant with the deployed contract's address on Ganache (e.g., `0x18CE406CDe1dc7B324AD01Df19D0f37749dA5c85`).
 
 7. Start the application server:
 
