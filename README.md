@@ -56,7 +56,6 @@ To run the TruckTracking application locally, you need to have the following pac
 ## Usage
 
 - You can now track trucks by entering the truck details and submitting the form.
-	
 - Truck movements and location updates will be stored on the Ethereum blockchain and can be viewed in real-time on the TruckTracking interface.
 
 ## Testing
@@ -64,11 +63,8 @@ To run the TruckTracking application locally, you need to have the following pac
 To run the tests for the TruckTracking application, using Puppeteer and Chai, follow these steps:
 
 - Make sure the application server is running.
-
 - Open a terminal and navigate to the project/test directory.
-
 - Run the following command:
-
 	- npx mocha test.js --timeout 60000
 
 ## Contributing
