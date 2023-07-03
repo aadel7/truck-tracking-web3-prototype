@@ -53,24 +53,21 @@ To run the TruckTracking application locally, you need to have the following pac
 
 8. Open your web browser and visit `http://localhost:3000` to access the TruckTracking application.
 
-## Configuration
-
-
 ## Usage
 
-	1. You can now track trucks by entering the truck details and submitting the form.
+- You can now track trucks by entering the truck details and submitting the form.
 	
-	2. Truck movements and location updates will be stored on the Ethereum blockchain and can be viewed in real-time on the TruckTracking interface.
+- Truck movements and location updates will be stored on the Ethereum blockchain and can be viewed in real-time on the TruckTracking interface.
 
 ## Testing
 
 To run the tests for the TruckTracking application, using Puppeteer and Chai, follow these steps:
 
-1. Make sure the application server is running.
+- Make sure the application server is running.
 
-2. Open a terminal and navigate to the project/test directory.
+- Open a terminal and navigate to the project/test directory.
 
-3. Run the following command:
+- Run the following command:
 
 	- npx mocha test.js --timeout 60000
 
