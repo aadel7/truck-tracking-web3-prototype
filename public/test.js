@@ -7,7 +7,7 @@ describe('Truck Tracking App', () => {
   let page;
 
   before(async () => {
-    browser = await puppeteer.launch({ headless: false, slowMo: 100 });
+    browser = await puppeteer.launch({ headless: true, slowMo: 100 });
     page = await browser.newPage();
     await page.goto('http://localhost:3000'); // Make sure to replace with the correct URL of your app
   });
@@ -32,13 +32,13 @@ describe('Truck Tracking App', () => {
   describe('Inicializacion del Contrato', () => {
 
     it('debe seleccionar la cuenta y mostrar su balance', async () => {
-      await page.select('#accountSelect', '0x777b26F815A97339f404F10bF82e652B9cFC379B');
+      await page.select('#accountSelect', '0x8509aFEfd02dc893FaeF394891c0B5EccFfF5220');
       await page.click('#continueBtn');
       await page.waitForSelector('#selectedAccount');
       const selectedAccount = await page.$eval('#selectedAccount', (element) => element.innerText);
       const balance = await page.$eval('#balance', (element) => element.innerText);
 
-      expect(selectedAccount).to.equal('0x777b26F815A97339f404F10bF82e652B9cFC379B');
+      expect(selectedAccount).to.equal('0x8509aFEfd02dc893FaeF394891c0B5EccFfF5220');
       expect(balance).to.not.be.null;
     });
   });
@@ -86,7 +86,7 @@ describe('Truck Tracking App', () => {
         page.waitForSelector('#materialExpirationDateInfo'),
         page.waitForSelector('#statusInfo'),
       ]);
-
+0x8509aFEfd02dc893FaeF394891c0B5EccFfF5220
       const shipmentId = await page.$eval('#shipmentId', (element) => element.innerText);
       const origin = await page.$eval('#originInfo', (element) => element.innerText);
       const destination = await page.$eval('#destinationInfo', (element) => element.innerText);
@@ -157,7 +157,7 @@ describe('Truck Tracking App', () => {
       const materialExpirationDate = await page.$eval('#materialExpirationDateInfo', (element) => element.innerText);
 
       // Assert the updated shipment details
-      expect(shipmentId).to.equal('1');
+      expect(shipmentId).to.equal('3');
       expect(origin).to.equal('Madrid');
       expect(destination).to.equal('Barcelona');
       expect(carrier).to.equal('FedEx');

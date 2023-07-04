@@ -2,7 +2,7 @@
 const web3 = new Web3('ws://127.0.0.1:8545');
 
 // Se obtiene al realizar el deployment del Smart Contract en Remix IDE.
-const contractAddress = '0x11ea0a88a38a2C7901d1e347Ba39Fa5B71054324';
+const contractAddress = '0x18CE406CDe1dc7B324AD01Df19D0f37749dA5c85';
 
 // Se obtiene al compilar el Smart Contract en Remix IDE
 const contractABI = [
