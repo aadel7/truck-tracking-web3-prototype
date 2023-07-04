@@ -22,19 +22,11 @@ To run the TruckTracking application locally, you need to have the following pac
 
 ## Installation
 
-1. Clone the repository:
-
-	### `git clone https://github.com/aadel7/truck-tracking-web3-prototype/`
-
-2. Navigate to the project directory:
-
-	### `cd truck-tracking-web3-prototype`
-
-4. Start Ganache CLI:
+1. Start Ganache CLI:
 
 	### `npx ganache-cli`
 
-5. Deploy the smart contract:
+2. Deploy the Smart Contract:
 
 	- Option 1: Using Remix IDE
 	  - Open Remix IDE in your web browser.
@@ -44,21 +36,21 @@ To run the TruckTracking application locally, you need to have the following pac
 
 	- Option 2: Using Truffle
 
-6. Update the Contract Address in `TruckTracking.js`:
+3. Update the Contract Address in `TruckTracking.js`:
 	- Open the `TruckTracking.js` file located in the project directory.
 	- Update the `ContractAddress` constant with the deployed contract's address on Ganache (e.g., `0x18CE406CDe1dc7B324AD01Df19D0f37749dA5c85`).
 
-7. Start the application server:
+4. Start the application server:
 
 	### `node app.js`
 
-8. Open your web browser and visit `http://localhost:3000` to access the TruckTracking application.
+5. Open your web browser and visit `http://localhost:3000` to access the TruckTracking app.
 
 ## Testing
 
 To run the tests for the TruckTracking application, using Mocha, Chai, and Puppeteer, follow these steps:
 
-- Make sure the application server is running.
+- Make sure ganache-cli and the application server are running.
 - Open a terminal and navigate to the project/test directory.
 - Run the following command:
 
@@ -66,7 +58,7 @@ To run the tests for the TruckTracking application, using Mocha, Chai, and Puppe
 
 ## Usage
 
-- You can now track trucks by entering the truck details and submitting the form.
+- You can now create shipments and track existing ones by entering the truck details and submitting the form.
 - Truck movements and location updates will be stored on the Ethereum blockchain.
 
 ## Contributing
